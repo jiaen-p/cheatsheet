@@ -118,7 +118,6 @@ El objeto fecha esta creado en la franja horaria +0h, tiene en cuenta el cambio 
 
 ```js
 let fecha = new Date(Date.UTC(year, month, date, hour, min, sec, milisec));
-// ===================================================================================
 ```
 
 FORMATEAR la salida ver formatear fecha 2 para ver que opciones existe no es necesario rellenar todas, solo las que se desea
@@ -152,4 +151,76 @@ Programa de inicio
     window.onload = inicio;
   </script>
 </head>
+```
+
+Borrar contenido del body
+
+```js
+document.body.innerHTML = "";
+```
+
+## Estilos
+
+### Poner un div a lado del otro usando float
+
+```js
+div1.style.float = "left";
+div2.style.float = "left";
+```
+
+### Crear salto con float
+
+Siguiendo el ejemplo anterior, podemos tener un div3 que este en otra linea
+
+```js
+div3.style.float = "left";
+div3.style.clear = "left";
+```
+
+### Centrar contenido del div horizontalmente
+
+[justify content](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#:~:text=See%20also-,justify%2Dcontent,-The%20CSS%20justify)
+
+```js
+div.style.display = "flex";
+div.style.justifyContent = "center";
+```
+
+### Centrar contenido del div verticalmente
+
+[align items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items#:~:text=See%20also-,align%2Ditems,-The%20CSS%20align)
+
+```js
+div.style.display = "flex";
+div.style.alignItems = "center";
+```
+
+### Centrar contenido del div vertical y horizontal
+
+```js
+div.style.display = "flex";
+div.style.justifyContent = "center";
+div.style.alignItems = "center";
+```
+
+### Cambiar color de texto
+
+El texto se encuetra dentro de un div
+
+```js
+div.style.color = "white";
+```
+
+### Cambiar color de fondo de un div
+
+```js
+div.style.backgroundColor = "black";
+```
+
+### Tamaños de caja
+
+Si se quiere definir el tamaño de un div con width sin importar el padding y el borde, hay que añadir la propiedad de [box sizing](https://www.w3schools.com/CSSref/css3_pr_box-sizing.asp#:~:text=Demo%20%E2%9D%AF-,border%2Dbox,-The%20width%20and)
+
+```js
+div.style.boxSizing = "border-box";
 ```

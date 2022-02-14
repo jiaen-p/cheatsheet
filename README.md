@@ -171,6 +171,7 @@ El objeto fecha esta creado en la franja horaria +0h, tiene en cuenta el cambio 
 - horas, minutos, segundos, milisegundos empiezan a contar desde 0
 
 ```js
+// solo rellenar lo que es necesario, si solo es hasta el dia, se rellena hasta date se cierra el parentesis
 let fecha = new Date(Date.UTC(year, month, date, hour, min, sec, milisec));
 ```
 
@@ -184,6 +185,7 @@ let options = {
   day: "numeric",
 };
 let fechaStr = fecha.toLocaleDateString("es-ES", options);
+// con toLocaleDateString te cambia la franja horaria de forma automatica
 ```
 
 ### Rellenar con 0 por la izquierda
@@ -212,6 +214,7 @@ Programa de inicio
       // programa
       // variables locales
       let vl = 2;
+      // crearDiv("texto", vl) // por ejemplo
     }
     // funciones auxiliares
     window.onload = inicio;
@@ -347,7 +350,7 @@ for (titulo of titulos) {
 }
 ```
 
-### Hover
+### Hover en js // SOLO SI NO SE PERMITE EL USO DE CSS //
 
 Existe la posibilidad de tener un comportamiento parecido al modificador hover de css en js, para ello se usa los eventos y se modifica los estilos o las funciones deseadas
 
@@ -378,5 +381,6 @@ function sale() {
 
 ```js
 let div = document.createElement("div");
+// cambiar a pulsador
 div.style.cursor = "pointer";
 ```

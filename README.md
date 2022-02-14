@@ -245,7 +245,7 @@ div3.style.clear = "left";
 
 ### Centrar contenido del div horizontalmente
 
-[justify content](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#:~:text=See%20also-,justify%2Dcontent,-The%20CSS%20justify)
+- [justify content](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#:~:text=See%20also-,justify%2Dcontent,-The%20CSS%20justify)
 
 ```js
 div.style.display = "flex";
@@ -254,7 +254,7 @@ div.style.justifyContent = "center";
 
 ### Centrar contenido del div verticalmente
 
-[align items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items#:~:text=See%20also-,align%2Ditems,-The%20CSS%20align)
+- [align items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items#:~:text=See%20also-,align%2Ditems,-The%20CSS%20align)
 
 ```js
 div.style.display = "flex";
@@ -345,4 +345,38 @@ for (titulo of titulos) {
   // hacer cosas a cada titulo de uno en uno
   titulo.style.color = "red";
 }
+```
+
+### Hover
+
+Existe la posibilidad de tener un comportamiento parecido al modificador hover de css en js, para ello se usa los eventos y se modifica los estilos o las funciones deseadas
+
+- [demo y documentacion](https://www.w3schools.com/js/js_htmldom_events.asp#:~:text=Try%20it%20Yourself%20%C2%BB-,The%20onmouseover%20and%20onmouseout%20Events,-The%20onmouseover%20and)
+
+El ejemplo cambia el color de fondo cuando el cursor se encuentra encima del div
+
+```js
+function inicio() {
+  let div = document.createElement("div");
+  div.style.backgroundColor = "blue";
+  div.addEventListener("onmouseover", entra);
+  div.addEventListener("onmouseout", sale);
+}
+function entra() {
+  // comportamiento cuando el cursor entra en el area del div
+  this.style.backgroundColor = "red";
+}
+function sale() {
+  // comportamiento cuando el cursor sale del area del div
+  this.style.backgroundColor = "blue";
+}
+```
+
+### Cambiar cursor
+
+- [tipos de cursores](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor#:~:text=information%20is%20available.-,pointer,-The%20cursor%20is)
+
+```js
+let div = document.createElement("div");
+div.style.cursor = "pointer";
 ```

@@ -56,6 +56,32 @@ function creaDiv(texto) {
 }
 ```
 
+### Crear cualquier elemento HTML
+
+Si se desea crear cualquier elemento del html como un p o h1 y meterlo dentro de un div ya creado
+
+```js
+let h1 = document.createElement("h1");
+let p = document.createElement("p");
+// texto h1
+h1.innerText = "texto h1";
+// texto p
+p.innerText = "texto p";
+// se añade el h1 al div
+div.appendChild(h1);
+// se añade el p al div
+div.appendChild(p);
+```
+
+### Añadir id a elemento creado
+
+```js
+let p = document.createElement("p");
+p.id = "id elemento"; // puede ser una variable, si se quiere poner una variable no hace falta ""
+let idElemento = 2;
+p.id = idElemento;
+```
+
 ### Comportamiento de 2º click distinto del 1º click
 
 ```js
@@ -130,6 +156,18 @@ let options = {
   day: "numeric",
 };
 let fechaStr = fecha.toLocaleDateString("es-ES", options);
+```
+
+### Rellenar con 0 por la izquierda
+
+```js
+let numero = 1;
+// se requiere rellenar con 0 hasta 2 digitos
+let numeroStr = String(numero).padStart(2, 0); // 01
+
+let numero2 = 11;
+
+let numero2Str = String(numero).padStart(2, 0); // 11
 ```
 
 ## HTML
@@ -223,4 +261,43 @@ Si se quiere definir el tamaño de un div con width sin importar el padding y el
 
 ```js
 div.style.boxSizing = "border-box";
+```
+
+### Cambiar fuente del documento entero
+
+Esto iria dentro de inicio
+
+```js
+document.body.style.fontFamily = "Monospace";
+```
+
+### Cambiar fuente de un elemento
+
+Ejemplo para un elemento p
+
+```js
+let p = document.createElement("p");
+document.body.appendChild(p);
+p.style.fontFamily = "Monospace";
+```
+
+### Obtener un elemento del documento a traves de su id
+
+Si su id es "ejemplo"
+
+```js
+let objetoEjemplo = document.getElementById("ejemplo");
+objetoEjemplo.style.fontSize = "24px";
+```
+
+### Obtener todos los elementos de un tipo
+
+Ejemplo, se requiere todos los h2 del documento
+
+```js
+let titulos = document.getElementsByTagName("h2"); // es un array de objetos h2
+for (titulo of titulos) {
+  // hacer cosas a cada titulo de uno en uno
+  titulo.style.color = "red";
+}
 ```

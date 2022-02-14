@@ -56,6 +56,34 @@ function creaDiv(texto) {
 }
 ```
 
+### Crear div con texto y id
+
+```js
+function creaDiv(texto, id) {
+  let div = document.createElement("div");
+  // añadir div al body
+  document.body.appendChild(div);
+  // añadir id
+  div.id = id;
+  // añadir texto
+  div.innerText = texto;
+}
+```
+
+### Crear N elementos con id dinámico
+
+Continuacion del ejemplo anterior
+Ejemplo para N = 4
+
+```js
+function inicio() {
+  for (let i = 0; i < 4; i++) {
+    // 4 divs con id = 0 a id = 3
+    creaDiv("texto de cada div", i); // creaDiv(texto, id)
+  }
+}
+```
+
 ### Crear cualquier elemento HTML
 
 Si se desea crear cualquier elemento del html como un p o h1 y meterlo dentro de un div ya creado
@@ -279,6 +307,23 @@ Ejemplo para un elemento p
 let p = document.createElement("p");
 document.body.appendChild(p);
 p.style.fontFamily = "Monospace";
+```
+
+### Añadir / eliminar clase a un elemento
+
+```js
+let div = document.getElementById("idDiv");
+div.classList.add("class"); // añade "class" a las clases existentes de div
+div.classList.remove("class"); // elimina "class" de las clases de div
+```
+
+### Modificar las clases de un elemento
+
+```js
+let div = document.getElementById("idDiv");
+div.classList = "clase1 clase2 clase3"; // el elemento tendra solo las clases que estan presentes
+// se puede eliminar todas las clases igualando a ""
+div.classList = "";
 ```
 
 ### Obtener un elemento del documento a traves de su id
